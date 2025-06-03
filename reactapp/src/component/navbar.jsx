@@ -35,19 +35,20 @@ const durations = ['All', 'Daily', 'Weekly', 'Monthly', 'Year'];
   const filteredTasks = filter === 'All' ? tasks : tasks.filter(task => task.duration === filter);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-8 font-sans">
-      <h1 className="text-4xl font-bold text-center mb-4">
+    <div className="bg-gray-900 text-white p-8 font-sans">
+      <div>
+        <h1 className="text-4xl font-bold text-center mb-4">
         Make a <span className="text-indigo-400">better</span> plan <br /> for your life
-      </h1>
-      <p className="text-center text-gray-400 mb-8">
+        </h1>
+        <p className="text-center text-gray-400 mb-8">
         Whoever you are, Whatever you are looking for, we have the perfect place for you
       </p>
-
+       </div>
       <div className="flex flex-wrap justify-center items-center gap-4 mb-6">
         <select
           value={duration}
           onChange={e => setDuration(e.target.value)}
-          className="bg-gray-800 border border-yellow-400 px-4 py-2 rounded-full"
+          className="bg-black border border-yellow-400 px-4 py-2 rounded-full"
         >
           {durations.slice(1).map(d => (
             <option key={d} value={d}>{d}</option>
@@ -59,7 +60,7 @@ const durations = ['All', 'Daily', 'Weekly', 'Monthly', 'Year'];
           placeholder="Task"
           value={taskName}
           onChange={e => setTaskName(e.target.value)}
-          className="w-1/2 bg-gray-800 border border-yellow-400 px-4 py-2 rounded-full"
+          className="w-1/2 bg-black border border-yellow-400 px-4 py-2 rounded-full"
         />
 
         <button

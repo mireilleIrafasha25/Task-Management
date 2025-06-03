@@ -3,9 +3,8 @@ const Home=()=>
 {
     return(
 
-        <div className="bg-black">
+        <div className="min-h-screen bg-black">
         <NavBar/>
-        Home
         </div>
     )
 }
