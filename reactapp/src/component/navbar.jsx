@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-
+import { MdOutlineDeleteOutline } from "react-icons/md";
+import { MdEdit } from "react-icons/md";
 const durations = ['All', 'Daily', 'Weekly', 'Monthly', 'Year'];
 
  const Home=()=>{
@@ -36,7 +37,7 @@ const durations = ['All', 'Daily', 'Weekly', 'Monthly', 'Year'];
 
   return (
     <div className="text-white p-8 font-sans bg-[#181C1B] min-h-screen">
-      <div className='bg-[#212C29] p-6'>
+      <div className='bg-[#212C29] p-6 rounded-2xl'>
       <div>
         <h1 className="text-4xl font-bold mb-4">
         Make a <span className="text-indigo-400">better</span> plan <br /> for your life
@@ -45,11 +46,11 @@ const durations = ['All', 'Daily', 'Weekly', 'Monthly', 'Year'];
         <p className=" text-gray-400 mb-8 w-[16rem]">
         Whoever you are, Whatever you are looking for, we have the perfect place for you
       </p>
-           <div className="flex flex-row gap-4 mb-6">
+           <div className="flex flex-row gap-4 mb-6 ml-10">
         <select
           value={duration}
           onChange={e => setDuration(e.target.value)}
-          className="bg-black border border-yellow-400 h-10 py-1 px-1 rounded-3xl"
+          className="bg-[#181C1B] border border-[#A5A763] h-10 py-1 px-1 rounded-3xl"
         >
           {durations.slice(1).map(d => (
             <option key={d} value={d}>{d}</option>
@@ -61,7 +62,7 @@ const durations = ['All', 'Daily', 'Weekly', 'Monthly', 'Year'];
           placeholder="Task"
           value={taskName}
           onChange={e => setTaskName(e.target.value)}
-          className="w-1/2 bg-black border border-yellow-400 px-3 h-10 rounded-2xl"
+          className="w-1/2 bg-[#181C1B] border border-[#A5A763] px-3 h-10 rounded-2xl"
         />
 
         <button
@@ -93,8 +94,8 @@ const durations = ['All', 'Daily', 'Weekly', 'Monthly', 'Year'];
             <span>{idx + 1}</span>
             <span className="flex-1 ml-4">{task.name}</span>
             <div className="flex gap-2">
-              <button onClick={() => handleEdit(task)} className="bg-indigo-500 p-2 rounded-full">✏️</button>
-              <button onClick={() => handleDelete(task.id)} className="bg-red-500 p-2 rounded-full">🗑️</button>
+              <button onClick={() => handleEdit(task)} className="bg-[#DADDFF] text-blue-500 p-2 rounded-full"><MdEdit/></button>
+              <button onClick={() => handleDelete(task.id)} className="bg-[#DADDFF] text-red-500 p-2 rounded-full"><MdOutlineDeleteOutline/></button>
             </div>
           </div>
         ))}
