@@ -35,20 +35,21 @@ const durations = ['All', 'Daily', 'Weekly', 'Monthly', 'Year'];
   const filteredTasks = filter === 'All' ? tasks : tasks.filter(task => task.duration === filter);
 
   return (
-    <div className="bg-gray-900 text-white p-8 font-sans">
+    <div className="text-white p-8 font-sans">
+      <div className='bg-[#212C29]'>
       <div>
-        <h1 className="text-4xl font-bold text-center mb-4">
+        <h1 className="text-4xl font-bold mb-4">
         Make a <span className="text-indigo-400">better</span> plan <br /> for your life
         </h1>
-        <p className="text-center text-gray-400 mb-8">
+        <div className='flex flex-wrap w-100'>
+        <p className=" text-gray-400 mb-8 w-[16rem]">
         Whoever you are, Whatever you are looking for, we have the perfect place for you
       </p>
-       </div>
-      <div className="flex flex-wrap justify-center items-center gap-4 mb-6">
+           <div className="flex flex-row gap-4 mb-6">
         <select
           value={duration}
           onChange={e => setDuration(e.target.value)}
-          className="bg-black border border-yellow-400 px-4 py-2 rounded-full"
+          className="bg-black border border-yellow-400 h-10 py-1 px-1 rounded-3xl"
         >
           {durations.slice(1).map(d => (
             <option key={d} value={d}>{d}</option>
@@ -60,15 +61,18 @@ const durations = ['All', 'Daily', 'Weekly', 'Monthly', 'Year'];
           placeholder="Task"
           value={taskName}
           onChange={e => setTaskName(e.target.value)}
-          className="w-1/2 bg-black border border-yellow-400 px-4 py-2 rounded-full"
+          className="w-1/2 bg-black border border-yellow-400 h-10 rounded-2xl"
         />
 
         <button
           onClick={handleAddTask}
-          className="bg-yellow-400 text-black px-6 py-2 rounded-full"
-        >
+          className="bg-[#A5A763] text-black h-10 rounded-2xl w-[10rem]">
           {editId ? 'Update Task' : 'Add Task'}
         </button>
+      </div>
+      </div>
+       </div>
+ 
       </div>
 
       <div className="flex justify-center gap-2 mb-6">
