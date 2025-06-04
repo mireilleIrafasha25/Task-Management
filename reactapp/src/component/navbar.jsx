@@ -35,8 +35,8 @@ const durations = ['All', 'Daily', 'Weekly', 'Monthly', 'Year'];
   const filteredTasks = filter === 'All' ? tasks : tasks.filter(task => task.duration === filter);
 
   return (
-    <div className="text-white p-8 font-sans">
-      <div className='bg-[#212C29]'>
+    <div className="text-white p-8 font-sans bg-[#181C1B] min-h-screen">
+      <div className='bg-[#212C29] p-6'>
       <div>
         <h1 className="text-4xl font-bold mb-4">
         Make a <span className="text-indigo-400">better</span> plan <br /> for your life
@@ -61,7 +61,7 @@ const durations = ['All', 'Daily', 'Weekly', 'Monthly', 'Year'];
           placeholder="Task"
           value={taskName}
           onChange={e => setTaskName(e.target.value)}
-          className="w-1/2 bg-black border border-yellow-400 h-10 rounded-2xl"
+          className="w-1/2 bg-black border border-yellow-400 px-3 h-10 rounded-2xl"
         />
 
         <button
@@ -75,12 +75,12 @@ const durations = ['All', 'Daily', 'Weekly', 'Monthly', 'Year'];
  
       </div>
 
-      <div className="flex justify-center gap-2 mb-6">
+      <div className="flex justify-center gap-2 mb-6 ml-[45rem]">
         {durations.map(d => (
           <button
             key={d}
             onClick={() => setFilter(d)}
-            className={`px-4 py-2 rounded-full border ${filter === d ? 'bg-yellow-400 text-black' : 'bg-gray-800 text-white'}`}
+            className={`px-4 py-2 mt-3 rounded-3xl border ${filter === d ? 'bg-[#DADDFF] text-black' : 'bg-[#181C1B] text-white'}`}
           >
             {d}
           </button>
@@ -89,7 +89,7 @@ const durations = ['All', 'Daily', 'Weekly', 'Monthly', 'Year'];
 
       <div className="space-y-4">
         {filteredTasks.map((task, idx) => (
-          <div key={task.id} className="flex justify-between items-center bg-gray-800 rounded-full px-6 py-2">
+          <div key={task.id} className="flex justify-between items-center bg-[#181C1B] rounded-full px-6 py-2">
             <span>{idx + 1}</span>
             <span className="flex-1 ml-4">{task.name}</span>
             <div className="flex gap-2">
